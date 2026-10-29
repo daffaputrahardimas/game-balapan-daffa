@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Game Balapan Daffa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>🏎️ GAME BALAPAN DAFFA 🏎️</h1>
+
+    <div class="info">
+        <h2>Skor: <span id="skor">0</span></h2>
+        <h2>High Score: <span id="highscore">0</span></h2>
+    </div>
+
+    <div class="menu">
+        <label for="level">Pilih Level:</label>
+        <select id="level">
+            <option value="easy">Mudah</option>
+            <option value="medium">Sedang</option>
+            <option value="hard">Sulit</option>
+        </select>
+
+        <button id="startBtn" onclick="mulaiGame()">
+            ▶ MULAI GAME
+        </button>
+    </div>
+
+    <div id="jalan">
+        <div class="garis garis1"></div>
+        <div class="garis garis2"></div>
+
+        <div id="player" class="mobil player">🏎️</div>
+        <div id="musuh1" class="mobil musuh">🚙</div>
+        <div id="musuh2" class="mobil musuh">🚕</div>
+
+        <div id="overlay">
+            <h2 id="pesan">SIAP BALAPAN?</h2>
+            <p>Hindari mobil musuh!</p>
+        </div>
+    </div>
+
+    <h2 id="status">Tekan MULAI GAME</h2>
+
+    <div class="kontrol">
+        <button onclick="gerakKiri()">⬅ KIRI</button>
+        <button onclick="gerakKanan()">KANAN ➡</button>
+    </div>
+
+    <p>Gunakan tombol panah kiri dan kanan.</p>
+
+    <script src="script.js"></script>
+</body>
+</html>

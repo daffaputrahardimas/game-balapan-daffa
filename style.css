@@ -1,0 +1,178 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #10182c, #263b65);
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #ffcc00;
+    text-shadow: 0 0 15px orange;
+    font-size: 28px;
+}
+
+.info {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.info h2 {
+    font-size: 18px;
+}
+
+.menu {
+    margin: 15px;
+}
+
+select {
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button {
+    padding: 12px 20px;
+    margin: 5px;
+    background: linear-gradient(45deg, #ff9800, #ffcc00);
+    color: black;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px #0005;
+}
+
+button:hover {
+    background: #fff176;
+    transform: scale(1.05);
+}
+
+/* Jalan balapan */
+
+#jalan {
+    width: 300px;
+    height: 500px;
+    background: #383838;
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+    border: 5px solid #eeeeee;
+    border-left: 10px solid #39b54a;
+    border-right: 10px solid #39b54a;
+    border-radius: 8px;
+}
+
+/* Garis jalan bergerak */
+
+.garis {
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    top: 0;
+    background: repeating-linear-gradient(
+        to bottom,
+        white 0px,
+        white 45px,
+        transparent 45px,
+        transparent 90px
+    );
+    animation: jalanGerak 0.7s linear infinite;
+    animation-play-state: paused;
+}
+
+.garis1 {
+    left: 33.33%;
+}
+
+.garis2 {
+    left: 66.66%;
+}
+
+@keyframes jalanGerak {
+    from {
+        background-position-y: 0;
+    }
+    to {
+        background-position-y: 90px;
+    }
+}
+
+/* Mobil */
+
+.mobil {
+    position: absolute;
+    width: 55px;
+    height: 65px;
+    font-size: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.player {
+    bottom: 20px;
+    left: 115px;
+    transform: rotate(0deg);
+}
+
+.musuh {
+    top: -100px;
+    transform: rotate(0deg);
+}
+#musuh1 {
+    left: 20px;
+}
+
+#musuh2 {
+    left: 205px;
+    top: -300px;
+}
+
+/* Menu awal dan Game Over */
+
+#overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+}
+
+#overlay h2 {
+    color: #ffcc00;
+    font-size: 28px;
+}
+
+#overlay p {
+    color: white;
+}
+
+#status {
+    color: #ffcc00;
+    font-size: 20px;
+}
+
+.kontrol {
+    margin: 15px;
+}
+
+.kontrol button {
+    min-width: 110px;
+}
+
+#jalan.berjalan .garis {
+    animation-play-state: running;
+}
